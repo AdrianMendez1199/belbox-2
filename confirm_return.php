@@ -2,6 +2,7 @@
     require_once("./head.php"); 
     require_once("./header.php"); 
     require_once("./aside.php");
+
 ?>
 
 
@@ -24,6 +25,8 @@
                         <th>Unidad Ejecutora</th>
                         <th>Nit</th>
                         <th>Cantidad de paginas</th>
+                        <th>Recibidor Por</th>
+                        <th>Fecha Recibido</th>
                         <th>Acciones</th>
                     </thead>
                     <tbody>
@@ -32,9 +35,10 @@
                          <td><?php echo $_GET['unidad']; ?></td>
                          <td><?php echo $_GET['nit']; ?></td>
                          <td><?php echo $_GET['number_page']; ?></td>
-                         <td><?php echo $_GET['numero_caja']; ?></td>
+                         <td><?php echo $_GET['received_by']; ?></td>
+                         <td><?php echo $_GET['date_received']; ?></td>
                          <td>   
-                             <a href="confirm_file_enter.php?file=<?php echo $_GET['file'] ?>"
+                             <a href="confirm_file_enter.php?file=<?php echo $_GET['file'] ?>&received_by=<?php echo $_GET['received_by'] ?>"
                              class="label label-success">
                                 Confirmar
                              </a>
@@ -49,3 +53,10 @@
             </div>
         </div>
     </section>
+<?php require_once ("footer.php"); ?>
+
+<script>
+  $(document).ready(function() {
+    $("#tb-user").DataTable();
+  })
+</script>

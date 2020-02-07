@@ -44,7 +44,7 @@
 
                               <div class="form-group">
                                   <label>RECIBIDO POR:</label>
-                                  <input type="date" required name="datecur" class="form-control" rows="3" placeholder=""></input>
+                                  <input type="text" required name="received_by" class="form-control" rows="3" placeholder=""></input>
                               </div>
                               <!-- <div class="form-group">
                                   <label>NIT</label> &nbsp; &nbsp; &nbsp; &nbsp;

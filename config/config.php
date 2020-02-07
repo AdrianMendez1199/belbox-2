@@ -7,9 +7,9 @@
 	// define('DB_NAME', 'heroku_6295293fb1cbf1b');//Nombre de la base de datos
 
 
-    	define('DB_HOST', '127.0.0.1');//DB_HOST:  generalmente suele ser "127.0.0.1"
+    define('DB_HOST', '127.0.0.1');//DB_HOST:  generalmente suele ser "127.0.0.1"
 	define('DB_USER', 'root');//Usuario de tu base de datos
-	define('DB_PASS', 'Judoneyba*1234');//Contraseña del usuario de la base de datos
+	define('DB_PASS', '');//Contraseña del usuario de la base de datos
 	define('DB_NAME', 'belbox');//Nombre de la base de datos
 
     $con=mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);

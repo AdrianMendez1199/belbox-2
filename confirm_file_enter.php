@@ -4,7 +4,7 @@ require_once("./config/config.php");
 
 
 $filename = $_GET['file'];
-
+$received_by = $_GET['received_by'];
 
 
 $sql = "SELECT *FROM file WHERE file='$filename' ";
@@ -22,8 +22,9 @@ $data = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $number_page = $data['number_page'];
         $desc = $data['description'];
 
-        $insert = "INSERT INTO files_returned (name, nit, unidad_ejecutora, fecha_entrega, numero_pagina, descripcion)
-        VALUES ('$filename', '$nit', '$unidad_ejecutora', NOW(), '$number_page', '$desc')";
+
+        $insert = "INSERT INTO files_returned (name, nit, unidad_ejecutora, fecha_entrega, caja, numero_pagina, descripcion, received_by)
+        VALUES ('$filename', '$nit', '$unidad_ejecutora', NOW(), '$number_page', '$desc', '$caja', '$received_by')";
         
 
         $result = mysqli_query($con,$insert);

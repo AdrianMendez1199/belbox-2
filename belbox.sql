@@ -7,6 +7,10 @@
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
+CREATE DATABASE belboxx;
+
+USE belboxx;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -212,9 +216,7 @@ fecha_entrega  DATE NOT NULL,
 caja  varchar(50),
 numero_pagina  int not null,
 descripcion VARCHAR(250)
-
 );
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ALTER  TABLE files_returned add column received_by varchar(100);
+

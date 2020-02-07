@@ -4,8 +4,10 @@ require_once("../../config/config.php");
 
 if($_POST) {
 
-	$file		  = trim($_POST['namecur']);
-    $unidad_ejecutora = $_POST['unidad'];
+	$file		       = trim($_POST['namecur']);
+    $unidad_ejecutora  = $_POST['unidad'];
+    $received_by  = trim($_POST['received_by']); 
+    $date_received = trim($_POST['datecur']); 
     
     
     $sql = "SELECT fs.file, nombre,  fs.number_page , fs.nit, fs.caja
@@ -14,9 +16,7 @@ if($_POST) {
      WHERE file='$file' AND  fs.status_file = 1";
     $result  = mysqli_query($con , $sql);
     $data = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    // print_r($data);
-    // die;
-    
+  
 
     $error = base64_encode("Este CUR no esta en transito");
     if(!$data) {
@@ -24,7 +24,7 @@ if($_POST) {
 
     }else{
         extract($data);
-        header("Location: ../../confirm_return.php?nit=$nit&file=$file&unidad=$unidad_ejecutora&numero_caja=$caja&number_page=$number_page");
+        header("Location: ../../confirm_return.php?nit=$nit&file=$file&unidad=$unidad_ejecutora&numero_caja=$caja&number_page=$number_page&received_by=$received_by&date_received=$date_received");
 
         // $date_cur     = $data['date_cur'];
         // $nit		  = $data['nit'];

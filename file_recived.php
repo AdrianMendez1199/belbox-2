@@ -2,7 +2,11 @@
     require_once("./head.php"); 
     require_once("./header.php"); 
     require_once("./aside.php");
-    
+
+    require_once("./config/config.php");
+
+    $sql = "SELECT *FROM files_returned";
+    $result = mysqli_query($con, $sql);
 ?>
 
     <div class="content-wrapper"><!-- Content Wrapper. Contains page content -->
@@ -18,37 +22,42 @@
         <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <table class="table table-responsive-sm table-bordered table-striped " id="tb-files">
+                <table id="tb-recived" class="table table-responsive-sm table-bordered table-striped " id="tb-files">
                     <thead>
                         <th>CUR</th>
                         <th>Unidad Ejecutora</th>
+                        <th>Nit</th>
+                        <th>Paginas en el retorno</th>
+                        <th>Descripcion</th>
+                        <th>Fecha entrega</th>
+                        <th>Caja</th>
                         <th>Recibido Por</th>
-                        <th>Cantidad de paginas</th>
-                        <!-- <th></th> -->
                     </thead>
                     <tbody>
-                        <?php if (isset($_GET['file'])) : ?>
-                         <td><?php echo $_GET['file']; ?></td>
-                         <td><?php echo $_GET['unidad']; ?></td>
-                         <td><?php echo $_GET['nit']; ?></td>
-                         <td><?php echo $_GET['number_page']; ?></td>
-                         <td><?php echo $_GET['numero_caja']; ?></td>
-                         <td>   
-                             <a href="confirm_file_enter.php?file=<?php echo $_GET['file'] ?>"
-                             class="label label-success">
-                                Confirmar
-                             </a>
-                             <a href="home.php" class="label label-danger">
-                                Cancelar
-                             </a>
-                        </td>
-                        <?php endif;  ?>
+                    <?php while ($data = mysqli_fetch_array($result)) : ?>
+                        <tr>
+                            <td><?php echo $data['name']?></td>
+                            <td><?php echo $data['unidad_ejecutora']?></td>
+                            <td><?php echo $data['nit']?></td>
+                            <td><?php echo $data['numero_pagina']?></td>
+                            <td><?php echo $data['descripcion']?></td>
+                            <td><?php echo $data['fecha_entrega']?></td>
+                            <td><?php echo $data['caja']?></td>
+                            <td><?php echo $data['received_by']?></td>
+                        </tr>
+                    <?php endwhile; ?>
                     </tbody>
                 </table>
 
             </div>
         </div>
     </section>
+    </div>
 
-    </div><!-- /.content -->
+    <?php require_once ("footer.php"); ?>
 
+<script>
+  $(document).ready(function() {
+    $("#tb-recived").DataTable();
+  })
+</script>
