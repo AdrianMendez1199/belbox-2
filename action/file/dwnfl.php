@@ -1,30 +1,26 @@
 <?php
-	require_once("../../config/config.php");
-	// Count Download by abisoft https://github.com/amnersaucedososa
-		$id = base64_decode($_GET["id"]);
-		$count = (Int) base64_decode($_GET["download"]) + 1;
-		$id_code =  base64_decode($_GET["code"]);
-		   
-		   $sql = mysqli_query($con,"UPDATE file SET download ='$count' WHERE id ='$id' ");
-	//end count donwload
-	$file = mysqli_query($con,"select * from file where code=\"$id_code\"");
+require_once("../../config/config.php");
+$id = base64_decode($_GET["id"]);
+$count = (int) base64_decode($_GET["count"]) + 1;
+$id_code =  base64_decode($_GET["code"]);
 
-	while ($rows=mysqli_fetch_array($file)) {
-		$filename  = $rows['filename'];
-		$user_id   = $rows['user_id'];
-		// $is_folder = $rows['is_folder'];
-	}
+$sql = mysqli_query($con, "UPDATE file SET download ='$count' WHERE id ='$id' ");
+//end count donwload
+$file = mysqli_query($con, "select * from file where code=\"$id_code\"");
 
-	$url = "../../storage/data/".$user_id."/";
+while ($rows = mysqli_fetch_array($file)) {
 
-	if(!$is_folder){
-		$fullurl = $url.$filename;
-		
-		header("Content-type:application/pdf");
+	$filename  = $rows['filename'];
+	$user_id   = $rows['user_id'];
 
-		header("Content-Disposition:attachment;filename=$filename");
-		readfile($fullurl);
-	}
+}
+
+$url = "../../storage/data/" . $user_id . "/";
 
 
-?>
+$fullurl = $url . $filename;
+
+header("Content-type:application/pdf");
+
+header("Content-Disposition:attachment;filename=$filename");
+readfile($fullurl);

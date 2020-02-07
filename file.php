@@ -91,7 +91,7 @@ else if ($go==false && !$is_owner){
                 <div class="col-lg-6 col-xs-6 col-md-offset-3">
                     <div class="btn-group  pull-right"> 
 
-                        <a href="action/dwnfl.php?code=<?php echo $code;?>&id=<?php echo $file_id;?>&count=<?php echo $file_count;?>" class="btn btn-default"><i class="fa fa-download"></i> Descargar</a>
+                        <a href="action/dwnfl.php?code=<?php echo $code;?>&id=<?php echo $file_id;?>&count=<?php echo $file_count;?>&down=<?php echo $file_count;?>" class="btn btn-default"><i class="fa fa-download"></i> Descargar</a>
                     </div>
                     <?php
                        $url=$_SERVER["HTTP_HOST"]."/project/abisoft/belbox/file.php?code=".$_GET['code'];
