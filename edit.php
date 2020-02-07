@@ -50,7 +50,7 @@
                               </div>
                               <div class="form-group">
                                   <label>Correo Electrónico</label>
-                                  <input type="email" name="email" class="form-control" rows="3" value="<?php echo isset($user['email']) ? $user['email'] : '';?>"></input>
+                                  <input type="username" name="username" class="form-control" rows="3" value="<?php echo isset($user['username']) ? $user['username'] : '';?>"></input>
                               </div>
                               <div class="form-group">
                               <label>Tipo de usuario</label>

@@ -4,7 +4,7 @@
 	if (empty($_POST['fullname'])) {
            $errors = "Nombre vacío";
         }else if (empty($_POST['username'])){
-			$errors = "Correo Vacio vacío";
+			$errors = "El nombre de usuario";
 		} else if (empty($_POST['password'])){
 			$errors = "Contraseña vacío";
 		} else if (
@@ -26,7 +26,7 @@
 
 
 		if ($count>0){
-				$error  = "El correo electrónico ya existe en nuestra base de datos";
+				$error  = "El nombre de usuario, ya se encuentra registrado";
 			}else{
 
 			$sql = "insert into user (fullname,username,is_admin,password,image,created_at) ";

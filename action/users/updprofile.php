@@ -12,9 +12,9 @@
 
 		$id = $_SESSION['user_id'];
 		$fullname = $_POST['fullname'];
-		$email = $_POST['email'];
+		$username = $_POST['username'];
 
-		$sql="UPDATE user set fullname=\"$fullname\", email=\"$email\" where id=$id";
+		$sql="UPDATE user set fullname=\"$fullname\", username=\"$username\" where id=$id";
 		$query_update = mysqli_query($con,$sql);
 			if ($query_update){
 				$messages = "Datos actualizados satisfactoriamente.";

@@ -137,8 +137,8 @@
                                     <input name="fullname" type="text" class="form-control" id="fullname" value="<?php echo $fullname ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Correo Electrónico</label>
-                                    <input name="email" type="email" class="form-control" id="email" value="<?php echo $email ?>">
+                                    <label for="username">Nombre de Usuario</label>
+                                    <input name="username" type="username" class="form-control" id="username" value="<?php echo $username ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Contraseña Actual</label>

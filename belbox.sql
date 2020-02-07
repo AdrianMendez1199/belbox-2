@@ -7,9 +7,9 @@
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
-CREATE DATABASE belboxx;
+CREATE DATABASE belbox;
 
-USE belboxx;
+USE belbox;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -220,3 +220,6 @@ descripcion VARCHAR(250)
 
 ALTER  TABLE files_returned add column received_by varchar(100);
 
+INSERT INTO user
+(fullname, username, password, image, is_active, is_admin, created_at)
+VALUES('admin', 'admin', '10470c3b4b1fed12c3baac014be15fac67c6e815', 'default.png', 1, 0, NOW());

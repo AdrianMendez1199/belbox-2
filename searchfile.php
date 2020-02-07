@@ -1,14 +1,11 @@
 <?php
-
-
 require_once("config/config.php");
 
-if ($_POST) {
-    $cur = mysqli_real_escape_string($con, trim($_POST['cur']));
-    $unidad = mysqli_real_escape_string($con, trim($_POST['unidad']));
-    $nit = mysqli_real_escape_string($con, trim($_POST['nit']));
-    $fecha_inicial = mysqli_real_escape_string($con, trim($_POST['fecha_inicial']));
-    $fecha_final = mysqli_real_escape_string($con, trim($_POST['fecha_final']));
+    $cur = mysqli_real_escape_string($con, trim($_GET['cur']));
+    $unidad = mysqli_real_escape_string($con, trim($_GET['unidad']));
+    $nit = mysqli_real_escape_string($con, trim($_GET['nit']));
+    $fecha_inicial = mysqli_real_escape_string($con, trim($_GET['fecha_inicial']));
+    $fecha_final = mysqli_real_escape_string($con, trim($_GET['fecha_final']));
 
 
 
@@ -34,7 +31,7 @@ if ($_POST) {
 
 
     $result = mysqli_query($con, $query);
-}
+
 
 require_once("head.php");
 require_once("header.php");

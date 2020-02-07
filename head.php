@@ -8,7 +8,7 @@
     $query=mysqli_query($con,"SELECT * from user where id=$my_user_id");
     while ($row=mysqli_fetch_array($query)) {
         $fullname = $row['fullname'];
-        $email = $row['email'];
+        $username = $row['username'];
         $profile_pic = $row['image'];
         $created_at = $row['created_at'];
         $is_admin = $row['is_admin'];
@@ -105,3 +105,10 @@
             }
     </style>
 </head>
+
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>

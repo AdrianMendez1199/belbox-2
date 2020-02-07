@@ -10,10 +10,10 @@
 
 	$id = $_SESSION['user_id'];
 	$fullname = $_POST['fullname'];
-	$email = $_POST['email'];
+	$username = $_POST['username'];
 
 	if(isset($_POST['token'])){
-		$update = mysqli_query($con,"UPDATE user set fullname=\"$fullname\", email=\"$email\" where id=$id");
+		$update = mysqli_query($con,"UPDATE user set fullname=\"$fullname\", username=\"$username\" where id=$id");
 		
 
 	   	// CHANGE PASSWORD

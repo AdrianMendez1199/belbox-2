@@ -33,7 +33,7 @@
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="email" name="email" class="form-control" placeholder="Correo Electrónico" required>
+                    <input type="username" name="username" class="form-control" placeholder="Correo Electrónico" required>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
@@ -45,7 +45,7 @@
                     <div class="col-xs-8">
                         <div class="checkbox icheck">
                             <label>
-                                <input type="checkbox" required> Acepto los <a href="https://github.com/amnersaucedososa">terminos</a>
+                                <!-- <input type="checkbox" required> Acepto los <a href="https://github.com/amnersaucedososa">terminos</a> -->
                             </label>
                         </div>
                     </div><!-- /.col -->
