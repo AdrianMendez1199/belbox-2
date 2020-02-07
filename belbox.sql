@@ -7,9 +7,9 @@
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
-CREATE DATABASE belbox;
+CREATE DATABASE belbox2;
 
-USE belbox;
+USE belbox2;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
