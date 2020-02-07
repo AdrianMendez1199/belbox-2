@@ -32,6 +32,7 @@
                          <td><?php echo $_GET['unidad']; ?></td>
                          <td><?php echo $_GET['nit']; ?></td>
                          <td><?php echo $_GET['number_page']; ?></td>
+                         <td><?php echo $_GET['numero_caja']; ?></td>
                          <td>   
                              <a href="confirm_file_enter.php?file=<?php echo $_GET['file'] ?>"
                              class="label label-success">

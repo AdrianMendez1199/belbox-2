@@ -3,7 +3,7 @@
 	/*Inicia validacion del lado del servidor*/
 	if (empty($_POST['fullname'])) {
            $errors = "Nombre vacío";
-        }else if (empty($_POST['email'])){
+        }else if (empty($_POST['username'])){
 			$errors = "Correo Vacio vacío";
 		} else if (empty($_POST['password'])){
 			$errors = "Contraseña vacío";
@@ -16,10 +16,10 @@
 		
 		$fullname=$_POST["fullname"];
 		$password=sha1(md5($_POST["password"]));
-		$email=$_POST["email"];
+		$username=$_POST["username"];
 		$created_at = "NOW()";
 		$default_profile="default.png";
-		$sqls = "select * from user where (email= \"$email\")";
+		$sqls = "select * from user where (username= \"$username\")";
 		$users = mysqli_query($con,$sqls);
 		$count = mysqli_num_rows($users);
 		$is_admin = $_POST['is_admin'];
@@ -29,8 +29,8 @@
 				$error  = "El correo electrónico ya existe en nuestra base de datos";
 			}else{
 
-			$sql = "insert into user (fullname,email,is_admin,password,image,created_at) ";
-			$sql .= "value (\"$fullname\",\"$email\",\"$is_admin\",\"$password\",\"$default_profile\",$created_at)";
+			$sql = "insert into user (fullname,username,is_admin,password,image,created_at) ";
+			$sql .= "value (\"$fullname\",\"$username\",\"$is_admin\",\"$password\",\"$default_profile\",$created_at)";
 		   
 		
 			$query_new_insert = mysqli_query($con,$sql);

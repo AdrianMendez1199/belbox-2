@@ -8,7 +8,11 @@
     $count_files = mysqli_query($con, "select * from file where is_active = 1");
     $count_download = mysqli_query($con, "select sum(download) as download from file");
     $count_user=mysqli_query($con, "select * from user");
-    $count_comments=mysqli_query($con, "select * from out_file ")
+
+    $count_comments = mysqli_query($con, "SELECT * FROM out_file ouf 
+    INNER JOIN file fl 
+    ON fl.file  = ouf.filename 
+    AND fl.status_file = 1");
 
 ?>
     <div class="content-wrapper"><!-- Content Wrapper. Contains page content -->

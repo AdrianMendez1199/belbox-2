@@ -36,14 +36,20 @@
                                     <i class="fa fa-question-circle" alt="unidad" onClick="alert('INGRESAR EL ID REGISTRADO PARA LA UNIDAD EJECUTORA')"></i>
                                     <input type="text" required name="unidad" class="form-control" rows="3" placeholder="Ej: 201"></input>
                               </div>
+
+                              <div class="form-group">
+                                  <label>FECHA ENTREGA</label>
+                                  <input type="date" required name="datecur" class="form-control" rows="3" placeholder=""></input>
+                              </div>
+
+                              <div class="form-group">
+                                  <label>RECIBIDO POR:</label>
+                                  <input type="date" required name="datecur" class="form-control" rows="3" placeholder=""></input>
+                              </div>
                               <!-- <div class="form-group">
                                   <label>NIT</label> &nbsp; &nbsp; &nbsp; &nbsp;
                                     <i class="fa fa-question-circle" alt="nit" onClick="alert('INGRESAR EL NÚMERO DE NIT SIN GUIÓN')"></i>
                                     <input type="text" required name="nit" class="form-control" rows="3" placeholder="Ej: 12345678"></input>
-                              </div>
-                              <div class="form-group">
-                                  <label>FECHA ENTREGA</label>
-                                  <input type="date" required name="datecur" class="form-control" rows="3" placeholder=""></input>
                               </div>
                               <div class="form-group">
                                   <label>CAJA NÚMERO</label> &nbsp; &nbsp; &nbsp; &nbsp;

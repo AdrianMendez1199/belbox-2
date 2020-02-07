@@ -13,8 +13,7 @@ $result  = mysqli_query($con , $sql);
 
 $data = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-// print_r($data);
-// die;
+
 
        $unidad_ejecutora = $data['unidad_ejecutora'];
         $date_cur   = $data['date_cur'];
@@ -25,17 +24,16 @@ $data = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
         $insert = "INSERT INTO files_returned (name, nit, unidad_ejecutora, fecha_entrega, numero_pagina, descripcion)
         VALUES ('$filename', '$nit', '$unidad_ejecutora', NOW(), '$number_page', '$desc')";
+        
 
-
-
-// print_r($insert);
-// die;
         $result = mysqli_query($con,$insert);
     
         if($result) {
             $qr = "UPDATE file SET status_file = 0 WHERE file='$filename' ";
-     
+            $dl = "DELETE FROM out_file WHERE filename='$filename'";
+
             $update = mysqli_query($con,$qr);
+            $delete = mysqli_query($con,$dl);
     
             if($update) {
                 $sucess = base64_encode("El archivo se registro como entregado");

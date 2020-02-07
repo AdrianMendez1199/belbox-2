@@ -5,7 +5,11 @@ require_once("head.php");
 require_once("header.php");
 require_once("aside.php");
 
-$sql = "SELECT *FROM out_file";
+$sql = "SELECT ouf.*
+FROM out_file ouf 
+INNER JOIN file fl 
+ON fl.file  = ouf.filename 
+AND fl.status_file = 1";
 
 $result = mysqli_query($con, $sql);
 

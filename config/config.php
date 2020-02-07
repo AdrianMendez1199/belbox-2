@@ -1,7 +1,13 @@
 <?php
 
 	/*Datos de conexion a la base de datos*/
-	define('DB_HOST', '127.0.0.1');//DB_HOST:  generalmente suele ser "127.0.0.1"
+	// define('DB_HOST', 'us-cdbr-iron-east-04.cleardb.net');//DB_HOST:  generalmente suele ser "127.0.0.1"
+	// define('DB_USER', 'b331019a8a83ee');//Usuario de tu base de datos
+	// define('DB_PASS', '034922920262915');//Contraseña del usuario de la base de datos
+	// define('DB_NAME', 'heroku_6295293fb1cbf1b');//Nombre de la base de datos
+
+
+    	define('DB_HOST', '127.0.0.1');//DB_HOST:  generalmente suele ser "127.0.0.1"
 	define('DB_USER', 'root');//Usuario de tu base de datos
 	define('DB_PASS', 'Judoneyba*1234');//Contraseña del usuario de la base de datos
 	define('DB_NAME', 'belbox');//Nombre de la base de datos

@@ -38,6 +38,7 @@ if ($_GET) {
                         <th>Nombre Responsable</th>
                         <th>Ministerio</th>
                         <th>Departamento</th>
+                        <th>Numero de pagina</th>
                         <th>Fecha entrega</th>
                     </thead>
                     <tbody>

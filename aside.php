@@ -54,6 +54,7 @@
                 <ul class="treeview-menu" style="display: none;">
                     <li><a href="outfile.php"><i class="fa fa-circle-o"></i> Salidas</a></li>
                     <li><a href="return_file.php"><i class="fa fa-circle-o"></i> Retornos</a></li>
+                    <li><a href="file_recived.php"><i class="fa fa-circle-o"></i> Listado Archivos Recibidos</a></li>
                 </ul>
          </li>
 

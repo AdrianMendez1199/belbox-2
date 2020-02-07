@@ -36,7 +36,7 @@
                       <thead>
                         <tr>
                           <th>Nombre</th>
-                          <th>Email</th>
+                          <th>username</th>
                           <th>Fecha Creacion</th>
                           <th>Opción</th>
                         </tr>
@@ -52,7 +52,7 @@
                             ?>
                         <tr>
                           <td><?php echo $user['fullname'];?></td>
-                          <td><?php echo $user['email'];?></td>
+                          <td><?php echo $user['username'];?></td>
                           <td><?php echo date('d-m-Y', strtotime($user['created_at']));?></td>
                           <td>
                             <a  class="label label-danger" href="action/user/deleteuser.php?id=<?php echo $user['id']?>">Eliminar</a>

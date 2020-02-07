@@ -43,8 +43,8 @@
                                   <input type="text" name="apellido" class="form-control" rows="3" placeholder="Apellidos de Usuario"></input>
                               </div>
                               <div class="form-group">
-                                  <label>Correo Electrónico</label>
-                                  <input type="email" name="email" class="form-control" rows="3" placeholder="Ingresa el mail del usuario"></input>
+                                  <label>Nombre de Usuario</label>
+                                  <input type="text" name="username" class="form-control" rows="3" placeholder="Ingresa el mail del usuario"></input>
                               </div>
                               <div class="form-group">
                                   <label>Departamento</label>

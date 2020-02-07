@@ -26,9 +26,9 @@
         <div class="login-box">
                 <?php
                         $invalid=sha1(md5("contrasena y email invalido"));
-                        if (isset($_GET['invalid']) && $_GET['invalid']==$invalid) {
+                        if (isset($_GET['invalid'])) {
                             echo "<div class='alert alert-danger alert-dismissible fade in' role='alert'>
-                                <strong>Error!</strong> Contraseña o correo Electrónico invalido
+                                <strong>Error!</strong> Contraseña o email invalido
                                 </div>";
                         }
                         $error=sha1(md5("cuenta inactiva"));
@@ -49,7 +49,7 @@
                 <form action="action/login.php" method="post">
                     <div class="form-group has-feedback">
                         <input type="text" name="username" class="form-control" placeholder="Nombre de usuario">
-                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
                         <input type="password" name="password" class="form-control" placeholder="Contraseña">
@@ -92,3 +92,4 @@
         </script>
     </body>
 </html>
+

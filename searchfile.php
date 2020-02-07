@@ -59,6 +59,7 @@ require_once("aside.php");
                         <th>Unidad Ejecutora</th>
                         <th>Nit</th>
                         <th>Fecha</th>
+                        <th>Numero Caja</th>
                         <th>Acciones</th>
                     </thead>
                     <tbody>
@@ -69,6 +70,7 @@ require_once("aside.php");
                                 <td><?php echo $data['unidad_ejecutora']; ?></td>
                                 <td><?php echo $data['nit']; ?></td>
                                 <td><?php echo date('d-m-Y', strtotime($data['date_cur'])); ?></td>
+                                <td><?php echo $data['caja']; ?></td>
                                 <td>
 
                                     <a class="label label-info" href="viewfile.php?id=<?php echo base64_encode($data['user_id']) ?>&filename=<?php echo base64_encode($data['filename']) ?>">

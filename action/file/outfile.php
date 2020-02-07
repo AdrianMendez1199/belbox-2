@@ -18,11 +18,13 @@
 
 
 
-    $query = "SELECT *FROM file WHERE file='$cur' and user_id='$user_id' ";
+    $query = "SELECT *FROM file WHERE file='$cur'";
 
     $data = mysqli_query($con, $query);
 
     $da = mysqli_fetch_array($data, MYSQLI_ASSOC);
+
+
 
     if(!$da){
         $error = base64_encode("El cur que intenta buscar no se encuentra en la base de datos");
@@ -32,7 +34,7 @@
     }
 
     else if($da['status_file'] == 1) {
-        $error = base64_encode('error el archivo que intenta buscar, ya esta fuera.');
+        $error = base64_encode('error el archivo que intenta buscar, ya esta en transito.');
         header("location: ../../outfile.php?error=$error");
 
         return false;

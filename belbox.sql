@@ -47,7 +47,7 @@ CREATE TABLE `file` (
   `filename` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `download` int(11) NOT NULL,
-  'file_status' int NOT NULL DEFAULT 0,
+  -- 'file_status' int NOT NULL DEFAULT 0,
   `is_public` tinyint(1) NOT NULL DEFAULT '0',
   `is_folder` tinyint(1) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE `permision` (
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `fullname` varchar(100) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(60) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
@@ -120,7 +120,7 @@ ALTER TABLE `permision`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -197,6 +197,7 @@ ALTER TABLE file add column caja int;
 ALTER TABLE file ADD COLUMN date_cur DATE NOT NULL;
 ALTER TABLE file ADD column number_page int not null;
 ALTER TABLE out_file ADD column status_file int;
+ALTER TABLE file ADD column status_file int;
 ALTER TABLE out_file ADD column number_page int;
 
 

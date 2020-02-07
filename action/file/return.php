@@ -13,12 +13,13 @@ if($_POST) {
     INNER JOIN out_file of on fs.file = of.filename 
      WHERE file='$file' AND  fs.status_file = 1";
     $result  = mysqli_query($con , $sql);
-
     $data = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    // print_r($data);
+    // die;
     
 
     $error = base64_encode("Este CUR no esta en transito");
-    if(!isset($data['nit'])) {
+    if(!$data) {
         header("Location: ../../home.php?error=$error");
 
     }else{

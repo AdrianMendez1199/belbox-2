@@ -50,6 +50,9 @@ if(!empty($_POST) && isset($_SESSION["user_id"])){
 		VALUES ('$code','$filename','$description', 0, '$is_public', '$user_id', 0, '$folder_id',
 		NOW(), '$file', 0, 1, '$nit', '$unidad_ejecutora', '$caja', '$date_cur', '$number_page')";
 
+
+// print($sql);
+// die;
 		$query=mysqli_query($con, $sql);
 
 	
