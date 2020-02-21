@@ -6,18 +6,17 @@
   require_once("config/config.php");
 
 if($_GET) {
-    $id = base64_decode($_GET['id']);
-
+    $unidad_ejecutora = base64_decode($_GET['unidad_ejecutora']);
   
     $filename = base64_decode($_GET['filename']);
 
-    $query = "SELECT *From file WHERE file='$filename' and user_id='$id' ";
+    $query = "SELECT *From file WHERE file='$filename'";
     $result = mysqli_query($con, $query); 
 
     $response = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 
-    $pdfUrl = "storage/data/$id/".$filename;
+    $pdfUrl = "storage/data/".$unidad_ejecutora."/".$filename;
 
     if(!file_exists($pdfUrl)) {
       $error = "el archivo no existe";

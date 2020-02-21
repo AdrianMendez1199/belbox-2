@@ -18,7 +18,7 @@
 
 
 
-    $query = "SELECT *FROM file WHERE file='$cur'";
+    $query = "SELECT *FROM file WHERE file='$cur' AND unidad_ejecutora='$unidad' ";
 
     $data = mysqli_query($con, $query);
 
@@ -51,10 +51,8 @@
 
 
     if($result) {
-
-
         // header("Location: ../../outfile.php?success");
-        $update = "UPDATE file set status_file = 1 WHERE file='$cur' and user_id='$user_id' ";
+        $update = "UPDATE file set status_file = 1 WHERE file='$cur' ";
         $ms = mysqli_query($con, $update);
 
         if($update) {

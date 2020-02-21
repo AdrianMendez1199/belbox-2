@@ -7,9 +7,9 @@
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
-CREATE DATABASE belbox2;
+CREATE DATABASE belbox;
 
-USE belbox2;
+USE belbox;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -47,16 +47,16 @@ CREATE TABLE `comment` (
 
 CREATE TABLE `file` (
   `id` int(11) NOT NULL,
-  `code` varchar(12) NOT NULL,
-  `filename` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `download` int(11) NOT NULL,
+  `code` varchar(12),
+  `filename` varchar(255),
+  `description` varchar(255),
+  `download` int(11),
   -- 'file_status' int NOT NULL DEFAULT 0,
-  `is_public` tinyint(1) NOT NULL DEFAULT '0',
-  `is_folder` tinyint(1) NOT NULL DEFAULT '0',
-  `user_id` int(11) NOT NULL,
+  `is_public` tinyint(1) DEFAULT '0',
+  `is_folder` tinyint(1) DEFAULT '0',
+  `user_id` int(11),
   `folder_id` int(11) DEFAULT NULL,
-  `created_at` datetime NOT NULL
+  `created_at` datetime
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -84,7 +84,7 @@ CREATE TABLE `user` (
   `fullname` varchar(100) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(60) NOT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT 'default.png',
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `is_admin` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL
@@ -192,14 +192,14 @@ CREATE TABLE out_file (
 	fecha_entrega DATE NOT NULL
 );
 
-alter  table file  add column is_active  int default 0 ;
+alter  table file  add column is_active  int default 1 ;
 
 
 ALTER TABLE file add column nit int;
 ALTER TABLE file add column unidad_ejecutora int;
 ALTER TABLE file add column caja int;
-ALTER TABLE file ADD COLUMN date_cur DATE NOT NULL;
-ALTER TABLE file ADD column number_page int not null;
+ALTER TABLE file ADD COLUMN date_cur DATE;
+ALTER TABLE file ADD column number_page int;
 ALTER TABLE out_file ADD column status_file int;
 ALTER TABLE file ADD column status_file int;
 ALTER TABLE out_file ADD column number_page int;
@@ -210,15 +210,18 @@ ALTER TABLE out_file ADD column number_page int;
 CREATE TABLE files_returned  (
 id int primary key auto_increment, 
 name VARCHAR(150) not null ,
-nit int not null, 
-unidad_ejecutora int not null,
-fecha_entrega  DATE NOT NULL,
+nit int, 
+unidad_ejecutora int,
+fecha_entrega  DATE,
 caja  varchar(50),
-numero_pagina  int not null,
+numero_pagina  int,
 descripcion VARCHAR(250)
 );
 
 ALTER  TABLE files_returned add column received_by varchar(100);
+ALTER TABLE file add column monto varchar(20);
+
+
 
 INSERT INTO user
 (fullname, username, password, image, is_active, is_admin, created_at)

@@ -24,8 +24,9 @@ if(!empty($_POST) && isset($_SESSION["user_id"])){
 	$unidad_ejecutora = $_POST['unidad'];
 	$caja = $_POST['caja'];
 	$number_page = $_POST['number_page'];
+	$monto = $_POST['monto'];
 
-	$url = "../../storage/data/".$_SESSION['user_id']."/";
+	$url = "../../storage/data/".$unidad_ejecutora."/";
 
 	if(!is_dir($url)) {
 		mkdir($url, 0777, true);
@@ -46,13 +47,11 @@ if(!empty($_POST) && isset($_SESSION["user_id"])){
 
 		$sql = "INSERT INTO file (code, filename, description, download, is_public, user_id, is_folder, folder_id,
 		  created_at, file, status_file, is_active,
-		 nit, unidad_ejecutora, caja, date_cur, number_page)
+		 nit, unidad_ejecutora, caja, date_cur, number_page, monto)
 		VALUES ('$code','$filename','$description', 0, '$is_public', '$user_id', 0, '$folder_id',
-		NOW(), '$file', 0, 1, '$nit', '$unidad_ejecutora', '$caja', '$date_cur', '$number_page')";
+		NOW(), '$file', 0, 1, '$nit', '$unidad_ejecutora', '$caja', '$date_cur', '$number_page', '$monto')";
 
 
-// print($sql);
-// die;
 		$query=mysqli_query($con, $sql);
 
 	

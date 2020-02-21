@@ -72,6 +72,12 @@
                               </div>
 
                               <div class="form-group">
+                                  <label>MONTO</label> &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <i class="fa fa-question-circle" alt="" onClick="alert('INGRESAR EL NÚMERO DE PÁGINA QUE TIENE EL CUR')"></i>
+                                    <input type="text" name="monto" class="form-control" rows="3" placeholder="Monto del CUR"></input>
+                              </div>
+
+                              <div class="form-group">
                                     <label>DESCRIPCIÓN</label>
                                     <textarea name="description" class="form-control" rows="3" placeholder="Observaciones adicionales"></textarea>
                                 </div>
